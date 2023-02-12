@@ -1,0 +1,40 @@
+<h1>HobbyWorld</h1>
+<h3>一覧ページ</h3>
+
+<h4>投稿を検索</h4>
+ <%= form_tag({controller:"ryuyas",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_ryuya_path %>
+
+<div class=ryuyas-container">
+  <% @ryuyas.each do |t| %>
+    <div class=ryuya">
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.hobby_name %>
+      <%= t.genre %>
+      <%= t.price %>
+      <%= t.about %>
+      <%= t.spot %>
+      <div class="main-box">
+        <div class="left-container">
+      </div>
+        <div class="right-container">
+          <%= link_to "詳細", ryuya_path(t.id) %>
+          <%= link_to "編集", edit_ryuya_path(t.id) %>
+          <%= button_to "削除", ryuya_path(t.id), method: :delete %>
+        </div>
+      </div>
+        <p class="time"><%= t.created_at %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= stylesheet_link_tag 'index', :media => "all" %>
+

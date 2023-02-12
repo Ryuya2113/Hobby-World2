@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hobby_name: MyString
+  genre: MyString
+  price: 1
+  about: MyText
+  spot: MyString
+
+two:
+  hobby_name: MyString
+  genre: MyString
+  price: 1
+  about: MyText
+  spot: MyString

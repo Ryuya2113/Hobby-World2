@@ -1,0 +1,13 @@
+<%= form_for @ryuya do |f| %>
+    <%= f.label :hobby_name %>
+    <%= f.text_field :hobby_name, :size => 140 %>
+    <%= f.label :genre %>
+    <%= f.text_field :genre, :size => 140 %>
+    <%= f.label :price %>
+    <%= f.text_field :price, :size => 140 %>
+    <%= f.label :spot %>
+    <%= f.text_field :spot, :size => 140 %>
+    <%= f.label :about %>
+    <%= f.text_field :about, :size => 140 %> 
+    <%= f.submit "編集する" %>
+  <% end %>
